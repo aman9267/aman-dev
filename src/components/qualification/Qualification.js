@@ -18,7 +18,7 @@ const Qualification = () => {
 
       <div className="qualification__container container">
         <div className="qualification__tabs">
-            <div className="qualification__button button--flex" onClick={()=>{ToggleTab(0)}}>
+            <div className="qualification__button button--flex qualification__active" onClick={()=>{ToggleTab(0)}}>
                 <i className="uil uil-graduation-cap qualification__icon"></i> Education
             </div>
 
