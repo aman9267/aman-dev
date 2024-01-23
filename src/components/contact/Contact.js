@@ -51,8 +51,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
-        <div className="contact__content">
+        <div className="contact__content contact__input__content">
           <h3 className="contact__title">Write Your Project</h3>
           <form className="contact__form">
             <div className="contact__form-div">
