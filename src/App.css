@@ -159,11 +159,12 @@ img {
 .button {
   display: inline-block;
   background-color: var(--title-color);
-  color: var(--container-color);
+  color: var(--container-color)!important;
   padding: 1.25rem 2rem;
   border-radius: 1rem;
   font-weight: var(--font-medium);
 }
+
 
 .button:hover {
   background-color: var(--title-color-dark);

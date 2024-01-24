@@ -86,6 +86,10 @@
     
 }
 
+
+.button__color {
+    color: var(--container-color)!important;
+}
 /* Home Scroll */
 
 .home__scroll{
