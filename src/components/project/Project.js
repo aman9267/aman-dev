@@ -32,7 +32,7 @@ const Project = () => {
       category: "Static Website",
       imag: Imag,
       projectSubtitle: "Click To View",
-      href: 'https://app.netlify.com/sites/multishopping'
+      href: "https://multishopping.netlify.app/home",
     },
     {
       id: 2,
@@ -40,6 +40,7 @@ const Project = () => {
       category: "Static Website",
       imag: imag5,
       projectSubtitle: "Click To View",
+      href: "https://greenfreshgrocery.netlify.app/",
     },
     {
       id: 3,
@@ -47,7 +48,7 @@ const Project = () => {
       category: "Games",
       imag: imag4,
       projectSubtitle: "Click To View",
-      
+      href: "https://dkphotographer.netlify.app/",
     },
     {
       id: 4,
@@ -55,7 +56,7 @@ const Project = () => {
       category: "Desktop",
       imag: imag3,
       projectSubtitle: "Click To View",
-      href: 'https://html-css-canvas.netlify.app/'
+      href: "https://html-css-canvas.netlify.app/",
     },
     {
       id: 5,
@@ -63,7 +64,7 @@ const Project = () => {
       category: "Games",
       imag: Imag,
       projectSubtitle: "Click To View",
-      href: 'https://app.netlify.com/sites/multishopping'
+      href: "https://multishopping.netlify.app/home",
     },
     {
       id: 6,
@@ -71,15 +72,15 @@ const Project = () => {
       category: "Static Website",
       imag: imag4,
       projectSubtitle: "Click To View",
-      
+      href: "https://dkphotographer.netlify.app/",
     },
     {
       id: 7,
-      title: "Image Frame In JavaScript",
+      title: "Restaurant Landing Page",
       category: "App",
       imag: imag6,
       projectSubtitle: "Click To View",
-      href: 'https://fooodzone.netlify.app/'
+      href: "https://fooodzone.netlify.app/",
     },
     {
       id: 8,
@@ -87,6 +88,7 @@ const Project = () => {
       category: "App",
       imag: imag5,
       projectSubtitle: "Click To View",
+      href: "https://greenfreshgrocery.netlify.app/",
     },
     {
       id: 9,
@@ -94,39 +96,40 @@ const Project = () => {
       category: "App",
       imag: imag2,
       projectSubtitle: "Click to View",
-      href: 'https://app.netlify.com/sites/customchess-4'
+      href: "https://customchess-4.netlify.app/",
     },
     {
-        id: 10,
-        title: "Chess Board",
-        category: "Games",
-        imag: imag2,
-        projectSubtitle: "Click to View",
-        href: 'https://app.netlify.com/sites/customchess-4'
-      },
-      {
-        id: 11,
-        title: "Simple Website Photographic",
-        category: "Desktop",
-        imag: imag4,
-        projectSubtitle: "Click to View",
-      },
-      {
-        id: 12,
-        title: "Chess Board",
-        category: "Desktop",
-        imag: imag2,
-        projectSubtitle: "Click to View",
-        href: 'https://app.netlify.com/sites/customchess-4'
-      },
-      {
-        id: 12,
-        title: "Project Updated Soon",
-        category: "Static Website",
-        imag: imag6,
-        projectSubtitle: "Click to View",
-        href: 'https://fooodzone.netlify.app/'
-      },
+      id: 10,
+      title: "Chess Board",
+      category: "Games",
+      imag: imag2,
+      projectSubtitle: "Click to View",
+      href: "https://customchess-4.netlify.app/",
+    },
+    {
+      id: 11,
+      title: "Simple Website Photographic",
+      category: "Desktop",
+      imag: imag4,
+      projectSubtitle: "Click to View",
+      href: "https://dkphotographer.netlify.app/",
+    },
+    {
+      id: 12,
+      title: "Chess Board",
+      category: "Desktop",
+      imag: imag2,
+      projectSubtitle: "Click to View",
+      href: "https://multishopping.netlify.app/home",
+    },
+    {
+      id: 12,
+      title: "Restaurant Landing Page",
+      category: "Static Website",
+      imag: imag6,
+      projectSubtitle: "Click to View",
+      href: "https://fooodzone.netlify.app/",
+    },
   ];
 
   const filteredProjects = ProjectData.filter((p) => {
@@ -200,7 +203,7 @@ const Project = () => {
                 <h4>
                   <b>{p.title}</b>
                 </h4>
-                <a href={'/'}>{p.projectSubtitle}</a>
+                <a href={p.href} >{p.projectSubtitle}</a>
               </div>
             </div>
           );
