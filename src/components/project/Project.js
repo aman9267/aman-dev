@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Imag from "../../assest/p.png";
 import imag2 from "../../assest/p2.png";
 import imag3 from "../../assest/p3.png";
@@ -12,17 +13,11 @@ const Project = () => {
   const [category, setCategory] = useState("App");
 
   const ToggleTabs = (i) => {
-    console.log("Toggling toggle");
     settoggle(i);
-    if (i === 0) {
-      setCategory("App");
-    } else if (i === 1) {
-      setCategory("Desktop");
-    } else if (i === 2) {
-      setCategory("Games");
-    } else if (i === 3) {
-      setCategory("Static Website");
-    }
+    if (i === 0) setCategory("App");
+    else if (i === 1) setCategory("Desktop");
+    else if (i === 2) setCategory("Games");
+    else if (i === 3) setCategory("Static Website");
   };
 
   const ProjectData = [
@@ -131,85 +126,67 @@ const Project = () => {
       href: "https://fooodzone.netlify.app/",
     },
   ];
-
-  const filteredProjects = ProjectData.filter((p) => {
-    return p.category === category;
-  });
+  const filteredProjects = ProjectData.filter((p) => p.category === category);
 
   return (
-    <section className="section project">
+    <motion.section
+      className="section project"
+      id="projects"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <h2 className="section__title">Completed Projects</h2>
       <span className="section__subtitle">My individual project</span>
+
+      {/* Tabs */}
       <div className="project__container grid">
         <div className="project__content">
-          <div className="project__category">
-            <button
-              className={
-                toggle === 0
-                  ? "projects__button project__button-active"
-                  : "projects__button"
-              }
-              onClick={() => {
-                ToggleTabs(0);
-              }}
-            >
-              App
-            </button>
-            <button
-              className={
-                toggle === 1
-                  ? "projects__button project__button-active"
-                  : "projects__button"
-              }
-              onClick={() => {
-                ToggleTabs(1);
-              }}
-            >
-              Desktop
-            </button>
-            <button
-              className={
-                toggle === 2
-                  ? "projects__button project__button-active"
-                  : "projects__button"
-              }
-              onClick={() => {
-                ToggleTabs(2);
-              }}
-            >
-              Games
-            </button>
-            <button
-              className={
-                toggle === 3
-                  ? "projects__button project__button-active"
-                  : "projects__button"
-              }
-              onClick={() => {
-                ToggleTabs(3);
-              }}
-            >
-              Static Website
-            </button>
+          <div className="project__category text-color-white">
+            {["App", "Desktop", "Games", "Static Website"].map((name, i) => (
+              <button
+                key={name}
+                className={
+                  toggle === i
+                    ? "projects__button project__button-active"
+                    : "projects__button"
+                }
+                onClick={() => ToggleTabs(i)}
+              >
+                {name}
+              </button>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Project Cards */}
       <div className="project__container-card">
-        {filteredProjects.map((p, index) => {
-          return (
-            <div class="card">
-              <img src={p.imag} alt="Avatar" />
-              <div class="container">
+        <AnimatePresence mode="wait">
+          {filteredProjects.map((p, index) => (
+            <motion.div
+              key={p.id}
+              className="card"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              <img src={p.imag} alt={p.title} />
+              <div className="container">
                 <h4>
                   <b>{p.title}</b>
                 </h4>
-                <a href={p.href} >{p.projectSubtitle}</a>
+                <a href={p.href} target="_blank" rel="noopener noreferrer">
+                  {p.projectSubtitle}
+                </a>
               </div>
-            </div>
-          );
-        })}
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

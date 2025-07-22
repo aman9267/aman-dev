@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./qualification.css";
+import { motion } from "framer-motion";
 
 const Qualification = () => {
   // Use StateManager
@@ -10,7 +11,14 @@ const Qualification = () => {
   };
 
   return (
-    <section className="section qualification" id="portfolio">
+    <motion.section
+      className="section qualification"
+      id="portfolio"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <h2 className="section__title">Qualification</h2>
       <span className="section__subtitle">My Personal Journey</span>
 
@@ -35,6 +43,7 @@ const Qualification = () => {
             Education
           </div>
         </div>
+
         <div className="qualification__sections">
           <div
             className={
@@ -44,11 +53,29 @@ const Qualification = () => {
             }
           >
             <div className="qualification__data">
+              <div></div>
+              <div>
+                <span className="qualification__rounder"></span>
+                <span className="qualification__line"></span>
+              </div>
+              <div>
+                <h3 className="qualification__title">
+                  Next Js & React Js Developer
+                </h3>
+                <span className="qualification__subtitle">
+                  Appsums- Mobile App Development Company
+                </span>
+                <div className="qualification__calendar">
+                  <i className="uil uil-calendar-alt"></i> 2024 - Present
+                </div>
+              </div>
+            </div>
+            <div className="qualification__data">
               <div>
                 <h3 className="qualification__title">Freelancer</h3>
                 <span className="qualification__subtitle">At Home</span>
                 <div className="qualification__calendar">
-                  <i className="uil uil-calendar-alt"></i> 2023 - Present
+                  <i className="uil uil-calendar-alt"></i> 2023 - 2024
                 </div>
               </div>
               <div>
@@ -56,6 +83,7 @@ const Qualification = () => {
                 <span className="qualification__line"></span>
               </div>
             </div>
+
             <div className="qualification__data">
               <div></div>
               <div>
@@ -104,6 +132,7 @@ const Qualification = () => {
               </div>
             </div>
           </div>
+
           <div
             className={
               toggleState === 1
@@ -177,7 +206,7 @@ const Qualification = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

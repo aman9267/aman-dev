@@ -8,16 +8,18 @@ import Qualification from "./components/qualification/Qualification";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import Project from "./components/project/Project";
+import CursorTrail from "./components/SmokeCursor";
 
 function App() {
   return (
     <>
+      <CursorTrail />
       <Header />
       <main>
         <Home />
         <About />
         <Skills />
-        <Services />
+        {/* <Services /> */}
         <Qualification />
         <Project />
         <Contact />

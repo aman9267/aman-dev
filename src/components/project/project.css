@@ -11,6 +11,7 @@
 .projects__button {
   margin-right: var(--mb-1);
   background-color: var(--body-color);
+  color: var(--text-color);
 }
 
 .projects__button:last-child {
@@ -133,4 +134,8 @@
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
   }
+}
+
+.text-color-white {
+  color: white;
 }

@@ -15,14 +15,17 @@
   --body-color: hsl(var(--hue), var(--sat), 98%);
   --container-color: #fff; */
 
+  --title-color: #60a5fa; /* Light Blue */
+  --title-color-dark: #1e3a8a; /* Deep Indigo */
+  --text-color: #cbd5e1; /* Slate 300 */
+  --body-color: #0f172a; /* Slate 900 */
+  --container-color: #1e293b; /* Slate 800 */
 
-
-
-  --title-color: #025f6b;
-  --title-color-dark: #01414a;
-  --text-color: #0b7685;
-  --body-color: #e3fcff;
-  --container-color: #ffffff;
+  /* --title-color: #6d28d9;
+  --title-color-dark: #3b0764;
+  --text-color: #4c1d95;
+  --body-color: #f5f3ff;
+  --container-color: #ffffff; */
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
@@ -159,12 +162,11 @@ img {
 .button {
   display: inline-block;
   background-color: var(--title-color);
-  color: var(--container-color)!important;
+  color: var(--container-color) !important;
   padding: 1.25rem 2rem;
   border-radius: 1rem;
   font-weight: var(--font-medium);
 }
-
 
 .button:hover {
   background-color: var(--title-color-dark);
@@ -226,3 +228,4 @@ img {
     margin-right: var(--mb-1);
   }
 }
+
