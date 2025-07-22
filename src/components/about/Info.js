@@ -1,29 +1,59 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
+
+const boxVariant = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+};
 
 const Info = () => {
+  const infoList = [
+    {
+      icon: "bx bx-award about__icon",
+      title: "Experience",
+      subtitle: "3 Years working",
+    },
+    {
+      icon: "bx bx-briefcase-alt about__icon",
+      title: "Completed",
+      subtitle: "30+ Projects",
+    },
+    {
+      icon: "bx bx-support about__icon",
+      title: "Supports",
+      subtitle: "Online 24/7",
+    },
+  ];
+
   return (
-    <div className='about__info grid'>
-        <div className='about__box'>
-            <i className='bx bx-award about__icon'></i>
-            <h3 className='box__title'>Experience</h3>
-            <span className='about__subtitle'>2 Years working</span>
-        </div>
+    <motion.div
+      className="about__info grid"
+      initial="hidden"
+      animate="visible"
+    >
+      {infoList.map((item, index) => (
+        <motion.div
+          key={index}
+          className="about__box"
+          variants={boxVariant}
+          custom={index}
+        >
+          <i className={item.icon}></i>
+          <h3 className="box__title">{item.title}</h3>
+          <span className="about__subtitle">{item.subtitle}</span>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+};
 
-        <div className='about__box'>
-            <i className='bx bx-briefcase-alt about__icon'></i>
-            <h3 className='box__title'>Completed</h3>
-            <span className='about__subtitle'>11 + Projects </span>
-        </div>
-
-        <div className='about__box'>
-            <i className='bx bx-support about__icon'></i>
-            <h3 className='box__title'>Supports</h3>
-            <span className='about__subtitle'>Online 24/7</span>
-        </div>
-
-
-    </div>
-  )
-}
-
-export default Info
+export default Info;

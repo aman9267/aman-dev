@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Cursor Animation */
+.cursor-dot {
+  width: 8px !important;
+  height: 8px !important;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px 4px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(1px);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: smokeFade 1s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes smokeFade {
+  from {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
